@@ -21,12 +21,12 @@ pipeline {
              }
          } 
         
-         stage ('Docker image build 2'){
+//          stage ('Docker image build 2'){
       
-        steps{ 
-       sh   ' docker build -f src/main/docker/Dockerfile.legacy-jar -t quarkus/getting-started-reactive-legacy-jar .'
-             }
-         } 
+//         steps{ 
+//        sh   ' docker build -f src/main/docker/Dockerfile.legacy-jar -t quarkus/getting-started-reactive-legacy-jar .'
+//              }
+//          } 
       
 //         stage ('Deploying') {
 //       steps {
