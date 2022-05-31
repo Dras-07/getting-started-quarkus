@@ -12,11 +12,11 @@ pipeline {
              sh   'mvn -U clean install'
                  }
         }
+    }
         post {
     success {
-      mail to: anjanays619@gmail.com, subject: ‘The Pipeline success :(‘
-    }
-  }
+      mail to: anjanays619@gmail.com, subject: 'The Pipeline success :('
+            }
+             }         
            
-           }
 }
