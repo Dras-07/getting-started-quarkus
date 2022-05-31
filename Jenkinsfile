@@ -12,7 +12,12 @@ pipeline {
              sh   'mvn -U clean install'
                  }
         }
-        
+        stage('verify')
+        {
+            steps{
+                sh 'mvn verify -Pnative'
+                }
+        }
         
     stage ('Docker image build'){
       
