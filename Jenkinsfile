@@ -21,8 +21,8 @@ pipeline {
         
     stage ('Docker image build'){
       
-        steps{
-                    sh 'docker build -f src/main/docker/Dockerfile.native .'
+        steps{ 
+          sh 'docker build -f src/main/docker/Dockerfile.native -t quarkus/getting-started-reactive .'
              }
                 } 
         stage ('Deploying') {
