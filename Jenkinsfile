@@ -14,18 +14,26 @@ pipeline {
         }
      
         
-    stage ('Docker image build'){
+    stage ('Docker image build 1'){
       
         steps{ 
        sh    'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/getting-started-reactive-jvm .'
              }
          } 
-        stage ('Deploying') {
-      steps {
-       sh  'docker run -i --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
-        sh 'echo deploying'
-           }
-                           }
+        
+         stage ('Docker image build 2'){
+      
+        steps{ 
+       sh   ' docker build -f src/main/docker/Dockerfile.legacy-jar -t quarkus/getting-started-reactive-legacy-jar .'
+             }
+         } 
+      
+//         stage ('Deploying') {
+//       steps {
+//        sh  'docker run -i --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
+//         sh 'echo deploying'
+//            }
+//                            }
     }
                    
 }
