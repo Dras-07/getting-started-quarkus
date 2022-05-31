@@ -22,6 +22,7 @@ pipeline {
                 } 
         stage ('Deploying') {
       steps {
+          sh 'docker run -i --rm -p 8099:8080 quarkus/getting-started-reactive'
         sh 'echo deploying'
            }
                            }
