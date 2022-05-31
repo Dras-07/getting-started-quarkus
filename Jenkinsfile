@@ -30,7 +30,7 @@ pipeline {
       
         stage ('Deploying') {
       steps {
-       sh  'docker run -i --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
+       sh  'docker run -d  --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
         sh 'echo deploying'
            }
                            }
