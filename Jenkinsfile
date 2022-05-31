@@ -12,6 +12,13 @@ pipeline {
              sh   'mvn -U clean install'
                  }
         }
+        
+        
+        stage ('Deploying') {
+      steps {
+        sh 'echo deploying'
+           }
+                           }
     }
                    
 }
