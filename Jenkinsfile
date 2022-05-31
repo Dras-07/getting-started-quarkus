@@ -1,9 +1,16 @@
 pipeline {
     agent any 
     stages {
-        stage('Example Build') {
+        stage('Start') {
             steps {
                 echo 'build'
+            }
+        }
+        
+        stage('install'){
+            stage{
+             sh   'mvn -U clean install'
+
             }
         }
     }
