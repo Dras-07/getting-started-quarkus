@@ -14,12 +14,12 @@ pipeline {
         }
         
         
-//     stage ('Docker image build'){
+    stage ('Docker image build'){
       
-//         steps{
-//                     sh 'docker build -t Dockerfile .'
-//              }
-//                 } 
+        steps{
+                    sh 'docker build -f src/main/docker/Dockerfile.native .'
+             }
+                } 
         stage ('Deploying') {
       steps {
         sh 'echo deploying'
