@@ -13,10 +13,5 @@ pipeline {
                  }
         }
     }
-        post {
-    success {
-      mail to: anjanays619@gmail.com, subject: 'The Pipeline success :('
-            }
-             }         
-           
+                   
 }
