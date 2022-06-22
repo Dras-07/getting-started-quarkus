@@ -17,7 +17,7 @@ pipeline {
     stage ('Docker image build 1'){
       
         steps{ 
-       sh    'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/getting-started-reactive-jvm .'
+       sh    'sudo docker build -f src/main/docker/Dockerfile.jvm -t quarkus/getting-started-reactive-jvm .'
              }
          } 
         
