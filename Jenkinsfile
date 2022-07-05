@@ -18,7 +18,7 @@ pipeline {
       
         steps{ 
             //sh  'docker build -f src/main/docker/Dockerfile.native -t quarkus/getting-started-reactive .'
-            sh 'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/getting-started-reactive-jvm .'
+            sh 'sudo docker build -f src/main/docker/Dockerfile.jvm -t quarkus/getting-started-reactive-jvm .'
             //sh 'docker build -f src/main/docker/Dockerfile.native -t quarkus/getting-started-reactive .'
              }
         }
@@ -30,9 +30,9 @@ pipeline {
 //              }
 //          } 
       
-        stage ('Deploying') {
+        stage ('RUN IMAGE') {
       steps {
-       sh  'docker run -d  --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
+       sh  'sudo docker run -d  --rm -p 8010:8080 quarkus/getting-started-reactive-jvm'
         sh 'echo deploying'
            }
                            }
